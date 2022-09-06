@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/assets/images/castle.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    width: 100%;
+}
+
+.header {
+    width: 1200px;
+    height: 4rem;
+    margin-bottom: 2rem;
+}
+
+.name-container {
+    background-image: url('/assets/images/white-texture.png');
+    height: 4rem;
+    padding: 1rem;
+    width: 500px;
+    border-radius: .5rem;
+}
+
+#king-name {
+    height: 1.5rem;
+    border-radius: .2rem;
+    background-image: url('/assets/images/another-texture.png');
+    font-size: .9rem;
+    padding-left: .5rem;
+    border-bottom: 1px solid #a9a9a9;
+    border-left: 2px solid #a9a9a9;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.btn {
+    padding: .4rem .7rem;
+    border-radius: .3rem;
+    border: none;
+    background-image: url('/assets/images/arena-blue.jpg');
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-randomize {
+    margin-left: 1rem;
+}
+
+.arena {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4rem;
+    width: 1200px;
+    height: 800px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 1rem;
+}
+
+.character-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 70%;
+    background-color: black;
+    padding: .8rem  1rem;
+    border-radius: 15px;
+}
+
+.card-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px 10px 25px 25px;
+    height: 92%;
+    padding-top: .8rem;
+    position: relative;
+}
+
+.invader-background {
+    background-image: url('/assets/images/enemy-backgrond.jpg');
+}
+
+.ruler-background {
+    background-image: url('/assets/images/ruler-background.jpg');
+}
+
+.character-name {
+    width: 95%;
+    height: 2rem;
+    background-image: url('/assets/images/white-texture.png');
+    border-bottom: 4px solid #a9a9a9;
+    border-left: 2px solid #a9a9a9;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-radius: 18px/40px;
+}
+.character-name h2 {
+    font-size: 1.3rem;
+    margin-left: 10px;
+    align-self: baseline;
+}
+
+.character-name,
+.character,
+.character-description {
+    outline: 3px solid #D9A972;
+    box-shadow: 
+     0 0 0 2px #171314,
+     0 0 0 5px #26714A,
+    -3px 3px 2px 5px #171314;
+    margin-bottom: 7px;
+}
+
+.character,
+.character-description {
+    background-image: url('/assets/images/another-texture.png');
+}
+
+.character {
+    width: 89%;
+    height: 240px;
+    margin: .2rem 0;
+}
+
+.character-description {
+    width: 89%;
+    height: 170px;
+    margin-top: .2rem;
+    position: absolute;
+    bottom: -25px;
+}
+
+.battle-selection {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.selection-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .7rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: url('/assets/images/brick.jpg');
+    width: 100px;
+    border-bottom: 4px solid #a9a9a9;
+    border-left: 2px solid #a9a9a9;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    box-shadow: 
+    0 0 0 2px #171314,
+    0 0 0 5px #26714A,
+   -3px 3px 2px 5px #171314;
+}
+.selection-icon:hover {
+    border-left: 2px inset #a9a9a9;
+    border-top: 1px inset #a9a9a9;
+    border-bottom: 4px inset #a9a9a9;
+}
+
+figcaption {
+    background-image: url('/assets/images/arena-blue.jpg');
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
