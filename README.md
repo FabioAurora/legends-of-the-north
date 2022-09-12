@@ -15,34 +15,3 @@ In our UI, the player should be able to play the game by clicking on buttons rat
 
 
 random names:
-
-Gawyne the Keeper
-Rafe the Friend
-Umphrey the Traitor
-Rowley the Magnificent
-Thoma the Invincible
-Topaz the Bodyguard
-Reinfrid the Dragonheart
-Gilliame the Little
-Hanekin the Young
-Bat the Stubborn
-Aimery the Hero
-Harduinus the Tracker
-Geroldin the Messenger
-Ernoulet the Clever
-Bartrem the Shy
-Hildebrant the Talented
-Geofridus the Twisted
-Heudebrand the Paladin
-Ivone the Champ
-Nichol the Honorable
-Cristofre of the Dawn
-Gerbald the Selfish
-Aymon the Gorgeous
-Tancred the Dragon
-Peterkin the Clever
-Hary the Daring
-Thomelin the Gorgeous
-Hemart the Wild
-Artur the Tough
-

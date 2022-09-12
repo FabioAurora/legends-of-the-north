@@ -1,3 +1,10 @@
+/* Game Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+:root {
+    --game-font: 'Titan One', cursive;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +26,55 @@ img {
     width: 100%;
 }
 
+select {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .8);
+    border: 0;
+    position: absolute;
+    top: -80px;
+    left: 20%;
+    z-index: 10;
+    background-image: url('/assets/images/white-texture.png');
+    background-color: #D5CDBE;
+    padding: .8rem .8rem;
+    border-radius: 8px;
+    width: 200px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.05rem;
+    appearance: none;
+}
+
+.custom-select{
+    position: relative;
+    width: 297px;
+    background: no-repeat right #363636;
+    border-top:#575757 1px solid;
+    -webkit-border-radius: 4px 4px 4px 4px;
+     -moz-border-radius: 4px 4px 4px 4px;
+          border-radius: 4px 4px 4px 4px;
+    -webkit-box-shadow: inset 0 2px 4px rgba(107, 105, 105, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+          -moz-box-shadow:    0px 8px 3px -9px #000000;
+          -webkit-box-shadow: 0px 8px 3px -9px #000000;
+          box-shadow:         0px 8px 3px -9px #000000;  
+
+}
+
+.custom-select:before {
+    content: '';
+    position: absolute;
+    left: 76%;
+    top: -59px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #000;
+    z-index: 101;
+    pointer-events: none;
+}
+
 .header {
     width: 1200px;
     height: 4rem;
@@ -33,7 +89,7 @@ img {
     border-radius: .5rem;
 }
 
-#king-name {
+#username {
     height: 1.5rem;
     border-radius: .2rem;
     background-image: url('/assets/images/another-texture.png');
@@ -57,16 +113,18 @@ img {
     margin-left: 1rem;
 }
 
+
 .arena {
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 4rem;
-    width: 1200px;
-    height: 800px;
+    width: 1300px;
+    height: 900px;
     overflow: hidden;
     background: rgba(0, 0, 0, .5);
     border-radius: 1rem;
+    padding: 1rem 3rem;
 }
 
 .character-card {
@@ -74,18 +132,19 @@ img {
     flex-direction: column;
     align-items: center;
     width: 350px;
-    height: 70%;
+    height: 560px;
     background-color: black;
     padding: .8rem  1rem;
     border-radius: 15px;
 }
+
 
 .card-background {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px 10px 25px 25px;
-    height: 92%;
+    height: 82%;
     padding-top: .8rem;
     position: relative;
 }
@@ -98,7 +157,15 @@ img {
     background-image: url('/assets/images/ruler-background.jpg');
 }
 
+.invader-background,
+.ruler-background {
+    height: 470px;
+}
+
 .character-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 95%;
     height: 2rem;
     background-image: url('/assets/images/white-texture.png');
@@ -109,9 +176,13 @@ img {
     border-radius: 18px/40px;
 }
 .character-name h2 {
-    font-size: 1.3rem;
+    font-size: .8rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
     margin-left: 10px;
     align-self: baseline;
+    font-style: italic;
+    padding-top: 2px;
 }
 
 .character-name,
@@ -119,21 +190,41 @@ img {
 .character-description {
     outline: 3px solid #D9A972;
     box-shadow: 
-     0 0 0 2px #171314,
+     0 0 0 1px #171314,
      0 0 0 5px #26714A,
     -3px 3px 2px 5px #171314;
     margin-bottom: 7px;
-}
-
-.character,
-.character-description {
-    background-image: url('/assets/images/another-texture.png');
 }
 
 .character {
     width: 89%;
     height: 240px;
     margin: .2rem 0;
+    background-image: url('/assets/images/another-texture.png');
+    overflow: hidden;
+}
+
+#knight-name,
+#opponent-name {
+    font-size: .9rem;
+}
+
+.opponent-name-ctn {
+    margin-bottom: .5rem;
+}
+
+.life-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 120px;
+    gap: .3rem;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.hearts {
+    width: 15px;
 }
 
 .character-description {
@@ -141,7 +232,11 @@ img {
     height: 170px;
     margin-top: .2rem;
     position: absolute;
-    bottom: -25px;
+    bottom: -48px;
+    background-image: url(/assets/images/text-area-texture.jpeg);
+    padding: .5rem;
+    font-size: 1.05rem;
+    line-height: 1.4;
 }
 
 .battle-selection {
@@ -154,35 +249,85 @@ img {
 
 .selection-icon {
     display: flex;
+    color: #fff;
+   justify-content: center;
+    gap: 1rem;
+    font-size: 1.025em;
+    font-weight: bold;
+    width: 180px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+.selection-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+.selection-icon-display {
+    display: none;
+}
+
+.battle-ctn {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: .7rem;
-    font-size: 1.2rem;
-    font-weight: bold;
+    width: 300px;
     cursor: pointer;
-    background-image: url('/assets/images/brick.jpg');
-    width: 100px;
-    border-bottom: 4px solid #a9a9a9;
-    border-left: 2px solid #a9a9a9;
-    border-top: 1px solid #fff;
-    border-right: 1px solid #fff;
-    box-shadow: 
-    0 0 0 2px #171314,
-    0 0 0 5px #26714A,
-   -3px 3px 2px 5px #171314;
-}
-.selection-icon:hover {
-    border-left: 2px inset #a9a9a9;
-    border-top: 1px inset #a9a9a9;
-    border-bottom: 4px inset #a9a9a9;
 }
 
-figcaption {
-    background-image: url('/assets/images/arena-blue.jpg');
-    width: 100%;
+.battle-ctn img {
+    width: 160px;
+}
+
+.battle-title {
+    font-family: var(--game-font);
+    font-weight: 900;
+    color: #46454A;
+    font-size: 2.6rem;
+    text-shadow: 2px 2px 0 #CEC6B8, 2px -2px 0 #CEC6B8, -2px 2px 0 #CEC6B8, -2px -2px 0 #CEC6B8, 2px 0px 0 #CEC6B8, 0px 2px 0 #CEC6B8, -2px 0px 0 #CEC6B8, 0px -2px 0 #CEC6B8;
+    margin-top: 1rem;
+    letter-spacing: 2px;
+}
+
+#hero-avatar:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+
+#hero-avatar.hero-avatar-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  } 
+
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    position: relative;
+}
+
+.skill-container p {
+    width: 150px;
+    margin-top: .5rem;
 }
 
 
 
-
+.disable-skill {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    border-radius: 10px;
+}

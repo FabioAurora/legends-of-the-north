@@ -11,73 +11,177 @@
     
     <header class="header">
         <div class="name-container">
-            <label for="king-name">King Name</label>
-            <input id="king-name" type="text" name="king-name">
-            <button class="btn">create</button>
-            <button class="btn btn-randomize">Randomize</button>
+            <label for="username">Knight Name</label>
+            <input id="username" type="text" name="username" autocomplete="off">
+            <button id="btn-create" class="btn">create</button>
+            <button class="btn btn-random">Random Name</button>
         </div>
     </header>
 
     <main>
         <section >
             <section class="arena">
-                <div class="character-card">
-                    <div class="card-background ruler-background">
-                        <div class="character-name">
-                            <h2>King</h2>
-                        </div>
-                        <div class="character">
-                            <img src="assets/images/king.png" alt="image vector of a king for an icon">
-                        </div>
-                        <div class="character-name">
-                            <h2>Ruler</h2>
-                        </div>
-                        <div class="character-description">
-                            <p> Round information will go here.</p>
+                <div class="card-container">
+                    <div class="custom-select">
+                        <select  id="hero-avatar" name="hero-avatar" class="hero-avatar">
+                            <option selected disabled>Select Champion</option>
+                            <option class="option-style" value="king">Grand Officer</option>
+                            <option class="option-style" value="king1">Holy Knight</option>
+                            <option class="option-style" value="king3">Holy Knight</option>
+                            <option class="option-style" value="king4">Templar</option>
+                            <option class="option-style" value="king5">Jerusalem Knight</option>
+                            <option class="option-style" value="king6">White Knight</option>
+                            <option class="option-style" value="king7">Teutonic Knight</option>
+                            <option class="option-style" value="king8">Companion</option>
+                            <option class="option-style" value="king9">Paladin</option>
+                            <option class="option-style" value="king10">Paladin Guardian</option>
+                            <option class="option-style" value="king11">Elven Knight</option>
+                            <option class="option-style" value="king12">Dragon Hunter</option>
+                            <option class="option-style" value="king13">Dragon Hunter</option>
+                            <option class="option-style" value="king14">Defender</option>
+                            <option class="option-style" value="king15">Dragon Hunter</option>
+                            <option class="option-style" value="king16">Grand Commander</option>
+                            <option class="option-style" value="king17">Northen Knight</option>
+                        </select>
+                    </div>
+                    <div class="character-card">
+                        <div class="card-background ruler-background">
+                            <div class="character-name">
+                                <h2 id="kingName">Knight</h2>
+                            </div>
+                            <div class="character">
+                                <img id="hero-img" src="assets/images/king.jpg" alt="image vector of a king for an icon">
+                            </div>
+                            <div class="character-name">
+                                <div>
+                                    <h2 id="knight-class">Grand Officer</h2>
+                                </div>
+                                <div id="champion-health-bar" class="life-bar">
+                                    <div class="hearts"><img src="assets/images/heart.png" alt=""></div>
+                                    <div class="hearts"><img src="assets/images/heart.png" alt=""></div>
+                                    <div class="hearts"><img src="assets/images/heart.png" alt=""></div>
+                                    <div class="hearts"><img src="assets/images/heart.png" alt=""></div>
+                                    <div class="hearts"><img src="assets/images/heart.png" alt=""></div>
+                                </div>
+                            </div>
+                            <div id="remove-name" class="character-description">
+                                <p class="opponent-name-ctn">
+                                    <em id="knight-name"></em>
+                                </p>
+                                <p id="king-text">
+                                    HOW TO PLAY: <br>
+                                    1- Create Name <br>
+                                    2- Select Warrior <br>
+                                    3- Select Opponent <br>
+                                    4- Start Battle
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="battle-selection">
-                    <figure class="selection-icon">
-                        <img src="assets/images/melee.png" alt="icon image of a woman warrior">
-                        <figcaption>
-                            Melee
-                        </figcaption>
-                    </figure>
-                    <figure class="selection-icon">
-                        <div class="selection-img">
-                            <img src="assets/images/archer.png" alt="icon image of an archer">
+                    <figure class="selection-icon-display">
+                        <div id="shield" class="skill-container">
+                            <img src="assets/images/battle-icons/shield.png" alt="shield icon">
+                            <div id="disable-shield-container" class=""></div>
+                            <p>Shield</p>
                         </div>
-                        <figcaption>
-                            Ranged
-                        </figcaption>
+                        <div id="dagger" class="skill-container">
+                            <img src="assets/images/battle-icons/bloodthirsty.png" alt="dagger art concept icon">
+                            <p>Bloodthirsty Dagger</p>
+                        </div>
                     </figure>
-                    <figure class="selection-icon">
-                        <img src="assets/images/wizard.png" alt="icon image of a wizard">
-                        <figcaption>
-                            Magic
-                        </figcaption>
+                    <figure class="selection-icon-display">
+                        <div id="blade-spin" class="skill-container">
+                            <img src="assets/images/battle-icons/blade-spin.png" alt="fire blade spinning skill, art concept">
+                            <p>Blade Spin</p>
+                        </div>
+                        <div id="heavy-strike" class="skill-container">
+                            <img src="assets/images/battle-icons/heavy-strike.png" alt="Heavy strike that will do extra damage">
+                            <p>Heavy Strike</p>
+                        </div>
                     </figure>
+                    <figure class="selection-icon-display">
+                        <div id="golden-armor" class="skill-container">
+                            <img src="assets/images/battle-icons/untouchable.png" alt="invincible skill, will prevent all damage taken">
+                            <div id="disable-golden-armor-container" class=""></div>
+                            <p>Golden Armor</p>
+                        </div>
+                        <div id="shuriken" class="skill-container">
+                            <img src="assets/images/battle-icons/shuriken.png" alt="Shuriken for range attack">
+                            <p>Shuriken</p>
+                        </div>
+                    </figure>
+                    <figure class="selection-icon-display">
+                        <div id="health-potion" class="skill-container">
+                            <img src="assets/images/battle-icons/health-potion.png" alt="Health potion, concept art">
+                            <div id="disable-potion-container" class=""></div>
+                            <p>Health Potion</p>
+                        </div>
+                        <div id="rapid-severance" class="skill-container">
+                            <img src="assets/images/battle-icons/ultimate.png" alt="ultimate Skill, concept art">
+                            <div id="disable-rapid-severance-container" class=""></div>
+                            <p>Ultimate Rapid Severance</p>
+                        </div>
+                    </figure>
+
+                    <div id="start-battle" class="battle-ctn">
+                        <div class="battle-img-ctn">
+                            <img src="assets/images/start-battle.png" alt="battle icon with two crossed swords">
+                        </div>
+                        <h1 class="battle-title">Start Battle</h1>
+                    </div>
+
                 </div>
-                <div class="character-card">
-                    <div class="card-background invader-background">
-                        <div class="character-name">
-                            <h2>Guimart the Colossus</h2>
-                        </div>
-                        <div class="character">
-                            <img src="assets/images/enemy.png" alt="image of the enemy king for this battle">
-                        </div>
-                        <div class="character-name">
-                            <h2>Invader</h2>
-                        </div>
-                        <div class="character-description">
-                            <p>Round information will go here.</p>
+                <div class="card-container">
+                    <div class="custom-select">
+                        <select id="barbarian-avatar" name="hero-avatar" class="hero-avatar barbarian-avatar">
+                            <option selected disabled>Select Opponent</option>
+                            <option class="option-style" value="barbarian">Lirkmirr</option>
+                            <option class="option-style" value="barbarian1">Harald Bloodaxe</option>
+                            <option class="option-style" value="barbarian2">Gunnstein</option>
+                            <option class="option-style" value="barbarian3">Arnbjörg</option>
+                            <option class="option-style" value="barbarian4">Bóthildr</option>
+                            <option class="option-style" value="barbarian5">Peghed</option>
+                            <option class="option-style" value="barbarian6">Sowar</option>
+                            <option class="option-style" value="barbarian7">Eyvindur</option>
+                            <option class="option-style" value="barbarian8">Ùisdean the Devourer</option>
+                        </select>
+                    </div>
+                    <div class="character-card">
+                        <div class="card-background invader-background">
+                            <div class="character-name">
+                                <h2 id="barbarian-name">Lirkmirr</h2>
+                            </div>
+                            <div class="character">
+                                <img id="barbarian-img" src="assets/images/barbarian.png" alt="image of the enemy king for this battle">
+                            </div>
+                            <div class="character-name">
+                                <div>
+                                    <h2 id="opponent-class">Barbarian Legend</h2>
+                                </div>
+                                <div id="computer-life-bar" class="life-bar">
+                                    <div class="hearts"><img src="assets/images/heart.png" alt=""></div>
+                                    <div class="hearts"><img src="assets/images/heart.png" alt=""></div>
+                                    <div class="hearts"><img src="assets/images/heart.png" alt=""></div>
+                                    <div class="hearts"><img src="assets/images/heart.png" alt=""></div>
+                                    <div class="hearts"><img src="assets/images/heart.png" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="character-description ">
+                                <p class="opponent-name-ctn">
+                                    <em id="opponent-name">&ndash; "Thinking"</em>
+                                </p>
+                                <p id="invader-text">Every warrior wants a worthy opponent. There is no redress in fighting the pathetic.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
         </section>
     </main>
+
+    
 
 
     <script src="assets/JS/script.js"></script>
