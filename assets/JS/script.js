@@ -72,7 +72,7 @@ function randomName() {
     'William Marshal',
     'William Wallace',
     'Robert The Bruce',
-    'Richard The Lionheart'
+    'Richard The LionHeart'
   ];
 
   const selectIndex = names[Math.floor(Math.random() * names.length)];
@@ -332,7 +332,10 @@ function playRound(playerSelection, computerSelection) {
     case 'shield':
       if(computerSelection === 'dagger' || computerSelection === 'blade-spin' || computerSelection === 'shuriken') {
         computerLoseRound();
-        displayRoundMessage(championWinMessage)
+        OpponentName.textContent = `\u2014 "used ${computerSelection} "`
+        invaderText.textContent = `You keep defending my Attacks, but I will destroy that shield soon.`;
+        knightName.textContent = `\u2014 "Used ${playerSelection}"`;
+        kingText.textContent = `Used my Shield just in time to defend that`;
       }else if(computerSelection === 'heavy-strike') {
         brokenShield();
         displayRoundMessage(`ohhh no my shield...`)
@@ -421,6 +424,8 @@ function playRound(playerSelection, computerSelection) {
     default:
       console.log(`input error`);
   }
+
+  gameOver();
 }
 
 useSkills.forEach(icon => icon.addEventListener('click', () => {
@@ -487,17 +492,54 @@ function ultimateSkill() {
 
 
 const computerHealthBar = document.querySelector('#computer-life-bar');
-const lostHearth = document.querySelector('.hearts:last-child');
+const lostHearth = document.querySelector('.hearts');
 const playerHealthBar = document.querySelector('#champion-health-bar')
-console.log(lostHearth)
-console.log(computerHealthBar)
 
 function playerLoseRound() {
   playerHealthBar.removeChild(playerHealthBar.lastElementChild);
-  
 }
 
 function computerLoseRound() {
   computerHealthBar.removeChild(computerHealthBar.lastElementChild);
   
 }
+
+const gameOverScreen = document.querySelector('#game-over-screen');
+const gameIsOver = document.querySelector('#game-over');
+const gameOverText = document.querySelector('#game-over-text');
+const resetGame = document.querySelector('#reset-game');
+
+function gameOver() {
+  if(!playerHealthBar.firstElementChild){
+    showIcons.forEach(icon => {
+      icon.classList.add('selection-icon-display');
+      icon.classList.remove('selection-icon');
+    });
+
+    heroIMG.setAttribute('src', 'assets/images/game-over.png');
+    gameOverScreen.setAttribute('style', 'display: flex');
+    gameIsOver.setAttribute('style', 'display: flex');
+
+    gameOverText.textContent = `The winner is ${barbarianName.textContent}`;
+
+  }else if(!computerHealthBar.firstElementChild) {
+    showIcons.forEach(icon => {
+      icon.classList.add('selection-icon-display');
+      icon.classList.remove('selection-icon');
+    });
+
+    barbarianIMG.setAttribute('src', 'assets/images/game-over.png');
+    gameOverScreen.setAttribute('style', 'display: flex');
+    gameIsOver.setAttribute('style', 'display: flex');
+  }
+
+}
+
+
+resetGame.addEventListener('click', () => {
+  window.location.reload();
+})
+
+
+
+
