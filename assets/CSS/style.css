@@ -373,3 +373,19 @@ select {
     height: 60px;
     cursor: pointer;
 }
+
+.how-to-play {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    color: #fff;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+.how-to-play h1 {
+    text-align: center;
+    font-size: 1.3rem;
+}
+.how-to-play ol li {
+    margin-bottom: .5rem;
+}

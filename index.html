@@ -24,12 +24,12 @@
                 <div id="game-over-screen"></div>
                 <div class="card-container">
                     <div class="custom-select">
-                        <select  id="hero-avatar" name="hero-avatar" class="hero-avatar">
+                        <select  id="champion-avatar" name="hero-avatar" class="hero-avatar">
                             <option selected disabled>Select Champion</option>
-                            <option class="option-style" value="king">Grand Officer</option>
-                            <option class="option-style" value="king1">Holy Knight</option>
-                            <option class="option-style" value="king3">Holy Knight</option>
-                            <option class="option-style" value="king4">Templar</option>
+                            <option class="option-style" value="grand officer">Grand Officer</option>
+                            <option class="option-style" value="holy knight 1">Holy Knight</option>
+                            <option class="option-style" value="holy knight 2">Holy Knight</option>
+                            <option class="option-style" value="templar">Templar</option>
                             <option class="option-style" value="king5">Jerusalem Knight</option>
                             <option class="option-style" value="king6">White Knight</option>
                             <option class="option-style" value="king7">Teutonic Knight</option>
@@ -48,7 +48,7 @@
                     <div class="character-card">
                         <div class="card-background ruler-background">
                             <div class="character-name">
-                                <h2 id="kingName">Knight</h2>
+                                <h2 id="champion-name">Knight</h2>
                             </div>
                             <div class="character">
                                 <img id="hero-img" src="assets/images/king.jpg" alt="image vector of a king for an icon">
@@ -67,14 +67,10 @@
                             </div>
                             <div id="remove-name" class="character-description">
                                 <p class="opponent-name-ctn">
-                                    <em id="knight-name"></em>
+                                    <em id="champion-action">&ndash; "Says with low voice"</em>
                                 </p>
-                                <p id="king-text">
-                                    HOW TO PLAY: <br>
-                                    1- Create Name <br>
-                                    2- Select Warrior <br>
-                                    3- Select Opponent <br>
-                                    4- Start Battle
+                                <p id="champion-dialogue">
+                                    Most have been forgotten. Most deserve to be forgotten. The heroes will always be remembered. The best. The best and the worst. And a few who were a bit of both.
                                 </p>
                             </div>
                         </div>
@@ -82,44 +78,44 @@
                 </div>
                 <div class="battle-selection">
                     <figure class="selection-icon-display">
-                        <div id="shield" class="skill-container">
+                        <div title="Blocks some attacks" id="shield" class="skill-container">
                             <img src="assets/images/battle-icons/shield.png" alt="shield icon">
                             <div id="disable-shield-container" class=""></div>
                             <p>Shield</p>
                         </div>
-                        <div id="dagger" class="skill-container">
+                        <div title="Attack Speed, good vs heavy attacks" id="dagger" class="skill-container">
                             <img src="assets/images/battle-icons/bloodthirsty.png" alt="dagger art concept icon">
                             <p>Bloodthirsty Dagger</p>
                         </div>
                     </figure>
                     <figure class="selection-icon-display">
-                        <div id="blade-spin" class="skill-container">
+                        <div title="damage skill and deflects daggers and heavy attacks" id="blade-spin" class="skill-container">
                             <img src="assets/images/battle-icons/blade-spin.png" alt="fire blade spinning skill, art concept">
                             <p>Blade Spin</p>
                         </div>
-                        <div id="heavy-strike" class="skill-container">
+                        <div title="Powerful attack that no shield can block" id="heavy-strike" class="skill-container">
                             <img src="assets/images/battle-icons/heavy-strike.png" alt="Heavy strike that will do extra damage">
                             <p>Heavy Strike</p>
                         </div>
                     </figure>
                     <figure class="selection-icon-display">
-                        <div id="golden-armor" class="skill-container">
-                            <img src="assets/images/battle-icons/untouchable.png" alt="invincible skill, will prevent all damage taken">
+                        <div title="Divine protection against all damage" id="golden-armor" class="skill-container">
+                            <img src="assets/images/battle-icons/untouchable.png" alt="Invincible skill, will prevent all damage taken">
                             <div id="disable-golden-armor-container" class=""></div>
                             <p>Golden Armor</p>
                         </div>
-                        <div id="shuriken" class="skill-container">
+                        <div title="Range Attack" id="shuriken" class="skill-container">
                             <img src="assets/images/battle-icons/shuriken.png" alt="Shuriken for range attack">
                             <p>Shuriken</p>
                         </div>
                     </figure>
                     <figure class="selection-icon-display">
-                        <div id="health-potion" class="skill-container">
+                        <div title="Increases Health" id="health-potion" class="skill-container">
                             <img src="assets/images/battle-icons/health-potion.png" alt="Health potion, concept art">
                             <div id="disable-potion-container" class=""></div>
                             <p>Health Potion</p>
                         </div>
-                        <div id="rapid-severance" class="skill-container">
+                        <div title="Ultimate skilL, can only be stoped by Divine Protection" id="rapid-severance" class="skill-container">
                             <img src="assets/images/battle-icons/ultimate.png" alt="ultimate Skill, concept art">
                             <div id="disable-rapid-severance-container" class=""></div>
                             <p>Ultimate Rapid Severance</p>
@@ -127,6 +123,15 @@
                     </figure>
 
                     <div id="start-battle" class="battle-ctn">
+                        <div class="how-to-play">
+                            <h1>How to play</h1>
+                            <ol>
+                                <li>Create Name</li>
+                                <li>Select your Champion</li>
+                                <li>Select computer Champion</li>
+                                <li>Start Battle</li>
+                            </ol>
+                        </div>
                         <div class="battle-img-ctn">
                             <img src="assets/images/start-battle.png" alt="battle icon with two crossed swords">
                         </div>
@@ -181,9 +186,9 @@
                             </div>
                             <div class="character-description ">
                                 <p class="opponent-name-ctn">
-                                    <em id="opponent-name">&ndash; "Thinking"</em>
+                                    <em id="opponent-action">&ndash; "Says excited"</em>
                                 </p>
-                                <p id="invader-text">Every warrior wants a worthy opponent. There is no redress in fighting the pathetic.</p>
+                                <p id="opponent-dialogue">HA HA!, every warrior wants a worthy opponent. There is no redress in fighting the pathetic.</p>
                             </div>
                         </div>
                     </div>
