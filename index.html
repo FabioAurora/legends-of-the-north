@@ -78,12 +78,12 @@
                 </div>
                 <div class="battle-selection">
                     <figure class="selection-icon-display">
-                        <div title="Blocks some attacks" id="shield" class="skill-container">
+                        <div data-key="shield" title="Blocks some attacks" id="shield" class="skill-container">
                             <img src="assets/images/battle-icons/shield.png" alt="shield icon">
                             <div id="disable-shield-container" class=""></div>
                             <p>Shield</p>
                         </div>
-                        <div title="Attack Speed, good vs heavy attacks" id="dagger" class="skill-container">
+                        <div data-key="dagger" title="Attack Speed, good vs heavy attacks" id="dagger" class="skill-container">
                             <img src="assets/images/battle-icons/bloodthirsty.png" alt="dagger art concept icon">
                             <p>Bloodthirsty Dagger</p>
                         </div>
@@ -197,7 +197,9 @@
         </section>
     </main>
 
-    
+    <audio name="dagger" src="/assets/sounds/sword.wav"></audio>
+    <audio name="shield" src="/assets/sounds/shield-guard-6963.mp3"></audio>
+    <audio id="war" src="/assets/sounds/magic.wav" loop="loop"></audio>
 
 
     <script src="assets/JS/script.js"></script>

@@ -492,7 +492,7 @@ function playRound(playerSelection, computerSelection) {
 
 useSkills.forEach(icon => icon.addEventListener('click', () => {
   playRound(icon.id, computerPlay());
-}))
+}));
 
 function displayRoundMessage(message) {
   championDialogue.textContent = message;
@@ -602,6 +602,20 @@ resetGame.addEventListener('click', () => {
   window.location.reload();
 })
 
+/* ============================================ */
+// sounds
+
+function playSound(e) {
+ const audio = document.querySelector(`audio[name="${e.id}"]`);
+  if(!audio) return; // stop the function from running
+  audio.currentTime = 0;
+  audio.volume = 0.1;// rewind to the start
+  audio.play();
+}
 
 
+
+useSkills.forEach(skill => skill.addEventListener('click', () => {
+playSound(skill)
+}));
 
