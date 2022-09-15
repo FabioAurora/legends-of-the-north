@@ -17,7 +17,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('/assets/images/castle.jpg');
+    background-image: url('assets/images/castle.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -33,7 +33,7 @@ select {
     top: -80px;
     left: 20%;
     z-index: 10;
-    background-image: url('/assets/images/white-texture.png');
+    background-image: url('assets/images/white-texture.png');
     background-color: #D5CDBE;
     padding: .8rem .8rem;
     border-radius: 8px;
@@ -82,7 +82,7 @@ select {
 }
 
 .name-container {
-    background-image: url('/assets/images/white-texture.png');
+    background-image: url('assets/images/white-texture.png');
     height: 4rem;
     padding: 1rem;
     width: 500px;
@@ -92,7 +92,7 @@ select {
 #username {
     height: 1.5rem;
     border-radius: .2rem;
-    background-image: url('/assets/images/another-texture.png');
+    background-image: url('assets/images/another-texture.png');
     font-size: .9rem;
     padding-left: .5rem;
     border-bottom: 1px solid #a9a9a9;
@@ -105,7 +105,7 @@ select {
     padding: .4rem .7rem;
     border-radius: .3rem;
     border: none;
-    background-image: url('/assets/images/arena-blue.jpg');
+    background-image: url('assets/images/arena-blue.jpg');
     font-weight: bold;
     cursor: pointer;
 }
@@ -150,11 +150,11 @@ select {
 }
 
 .invader-background {
-    background-image: url('/assets/images/enemy-backgrond.jpg');
+    background-image: url('assets/images/enemy-backgrond.jpg');
 }
 
 .ruler-background {
-    background-image: url('/assets/images/ruler-background.jpg');
+    background-image: url('assets/images/ruler-background.jpg');
 }
 
 .invader-background,
@@ -168,7 +168,7 @@ select {
     justify-content: space-between;
     width: 95%;
     height: 2rem;
-    background-image: url('/assets/images/white-texture.png');
+    background-image: url('assets/images/white-texture.png');
     border-bottom: 4px solid #a9a9a9;
     border-left: 2px solid #a9a9a9;
     border-top: 1px solid #fff;
@@ -200,7 +200,7 @@ select {
     width: 89%;
     height: 240px;
     margin: .2rem 0;
-    background-image: url('/assets/images/another-texture.png');
+    background-image: url('assets/images/another-texture.png');
     overflow: hidden;
 }
 
@@ -233,7 +233,7 @@ select {
     margin-top: .2rem;
     position: absolute;
     bottom: -48px;
-    background-image: url(/assets/images/text-area-texture.jpeg);
+    background-image: url('assets/images/text-area-texture.jpeg');
     padding: .5rem;
     font-size: 1.05rem;
     line-height: 1.4;
