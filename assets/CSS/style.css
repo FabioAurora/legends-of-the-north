@@ -1,15 +1,15 @@
 /* Game Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
-
-:root {
-    --game-font: 'Titan One', cursive;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --game-font: 'Titan One', cursive;
+}
+
 
 body {
     min-height: 100vh;
@@ -17,9 +17,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../images/castle.jpg');
+    background-image: url('../images/castle-dragon.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 img {
@@ -29,9 +28,6 @@ img {
 select {
     box-shadow: 0 10px 25px rgba(0, 0, 0, .8);
     border: 0;
-    position: absolute;
-    top: -80px;
-    left: 20%;
     z-index: 10;
     background-image: url('../images/white-texture.png');
     background-color: #D5CDBE;
@@ -44,30 +40,21 @@ select {
     appearance: none;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .custom-select{
     position: relative;
-    width: 297px;
-    background: no-repeat right #363636;
-    border-top:#575757 1px solid;
-    -webkit-border-radius: 4px 4px 4px 4px;
-     -moz-border-radius: 4px 4px 4px 4px;
-          border-radius: 4px 4px 4px 4px;
-    -webkit-box-shadow: inset 0 2px 4px rgba(107, 105, 105, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-          -moz-box-shadow:    0px 8px 3px -9px #000000;
-          -webkit-box-shadow: 0px 8px 3px -9px #000000;
-          box-shadow:         0px 8px 3px -9px #000000;
-
 }
 
 .custom-select:before {
     content: '';
     position: absolute;
-    left: 76%;
-    top: -59px;
-    width: 0;
-    height: 0;
+    right: 10px;
+    top: 20px;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid #000;
@@ -76,9 +63,11 @@ select {
 }
 
 .header {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     height: 4rem;
     margin-bottom: 2rem;
+    margin-left: 2rem;
 }
 
 .name-container {
@@ -118,13 +107,21 @@ select {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 1300px;
-    height: 900px;
-    overflow: hidden;
+    width: 100%;
+    max-width: 1300px;
     background: rgba(0, 0, 0, .5);
     border-radius: 1rem;
-    padding: 1rem 3rem;
+    padding: 6rem 3rem;
     position: relative;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 15px;
+   
 }
 
 .character-card {
@@ -204,10 +201,6 @@ select {
     overflow: hidden;
 }
 
-#knight-name,
-#opponent-name {
-    font-size: .9rem;
-}
 
 .opponent-name-ctn {
     margin-bottom: .5rem;
@@ -277,19 +270,20 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    min-width: 300px;
+    width: 100%;
     cursor: pointer;
 }
 
 .battle-ctn img {
-    width: 160px;
+    width: 100px;
 }
 
 .battle-title {
     font-family: var(--game-font);
     font-weight: 900;
     color: #46454A;
-    font-size: 2.6rem;
+    font-size: 2rem;
     text-shadow: 2px 2px 0 #CEC6B8, 2px -2px 0 #CEC6B8, -2px 2px 0 #CEC6B8, -2px -2px 0 #CEC6B8, 2px 0px 0 #CEC6B8, 0px 2px 0 #CEC6B8, -2px 0px 0 #CEC6B8, 0px -2px 0 #CEC6B8;
     margin-top: 1rem;
     letter-spacing: 2px;
@@ -303,12 +297,12 @@ select {
     width: 0;
     height: 0;
     border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
+    border-color: #000 transparent transparent transparent;
   }
 
 #hero-avatar.hero-avatar-arrow-active:after {
     border-color: transparent transparent #fff transparent;
-    top: 7px;
+    top: 70px;
   } 
 
 .skill-container {
@@ -388,4 +382,101 @@ select {
 }
 .how-to-play ol li {
     margin-bottom: .5rem;
+}
+
+@media (max-width: 64rem) {
+    body {
+        color: #00FFFF;
+    }
+    select {
+        width: 180px;
+        font-size: .9rem;
+    }
+
+    .arena {
+        border-radius: 0;
+        padding: 4rem 2rem;
+        margin: 0;
+    }
+
+    .custom-select:before {
+        right: 5px;
+        top: 20px;
+    }
+
+    .character-card {
+        width: 280px;
+        height: 470px;
+        background-color: black;
+    }
+
+    .card-background {
+        height: 82%;
+        padding-top: .8rem;
+        position: relative;
+    }
+
+
+    .invader-background,
+    .ruler-background {
+        height: 410px;
+    }
+
+    .character-name {
+        height: 1.6rem;
+    }
+
+    .character {
+        width: 89%;
+        height: 187px;
+        margin: .2rem 0;
+    }
+
+
+    .life-bar {
+        width: 90px;
+        gap: .2rem;
+        margin-right: 5px;
+        margin-top: 6px;
+    }
+    
+    .hearts {
+        width: 15px;
+    }
+    
+    .character-description {
+        width: 89%;
+        height: 160px;
+        margin-top: .2rem;
+        position: absolute;
+        bottom: -30px;
+        background-image: url('../images/text-area-texture.jpeg');
+        padding: .5rem;
+        font-size: .9rem;
+        line-height: 1.4;
+    }
+
+    .selection-icon {
+        gap: 0;
+        font-size: 1em;
+    }
+    .selection-icon img,
+    .disable-skill {
+        width: 50px;
+        height: 50px;
+    }
+
+
+
+    .battle-ctn {
+        padding-bottom: 1rem;
+    }
+
+
+    .battle-title {
+        font-weight: 700;
+        
+    }
+
+
 }

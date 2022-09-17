@@ -368,8 +368,6 @@ function playRound(playerSelection, computerSelection) {
 
 
   //storing messages when using skills
-  const usingPotion = `Drinks Life Potion`;
-  
   //condition for tie:
   if(playerSelection === computerSelection) {
     displayRoundMessage(tie);
@@ -383,6 +381,7 @@ function playRound(playerSelection, computerSelection) {
         opponentDialogue.textContent = `I will destroy that shield soon.`;
         championAction.textContent = `\u2014 "Blocked with ${playerSelection}"`;
         championDialogue.textContent = `You know I can block that attack.`;
+        useShieldBlock();
       }else if(computerSelection === 'heavy-strike') {
         brokenShield();
         OpponentAction.textContent = `\u2014 "used ${computerSelection} "`
@@ -394,21 +393,26 @@ function playRound(playerSelection, computerSelection) {
         opponentDialogue.textContent = `Beeerrzerrrkkeerrr AURAAAAA, your attacks can't do nothing this round.`;
         championAction.textContent = `\u2014 "Used ${playerSelection}"`;
         championDialogue.textContent = `That Battle cry was impressive!`;
+        useShieldBlock();
       }else if(computerSelection === 'health-potion') {
         OpponentAction.textContent = `\u2014 "${computerSelection}"`
         opponentDialogue.textContent = `preparing herbal Elixir to increase health.`;
         championAction.textContent = `\u2014 "Used ${playerSelection}"`;
         championDialogue.textContent = `Defensive Stance with shield`;
+        useShieldBlock();
       }else if(playerSelection === computerSelection) {
         OpponentAction.textContent = `\u2014 "${computerSelection}"`
         opponentDialogue.textContent = `Defensive Stance with shield`;
         championAction.textContent = `\u2014 "Used ${playerSelection}"`;
         championDialogue.textContent = `Defensive Stance with shield`;
         displayRoundMessage(tie);
+        useShieldBlock();
       }else {
         playerLoseRound();
         displayRoundMessage(opponentMessage);
+        playerIsWounded();
       }
+      playSound(shield);
       break;
 
     case 'dagger':
@@ -421,6 +425,7 @@ function playRound(playerSelection, computerSelection) {
         playerLoseRound();
         displayRoundMessage(opponentMessage);
       }
+      useDagger();
       break;
 
     case 'blade-spin':
@@ -433,6 +438,7 @@ function playRound(playerSelection, computerSelection) {
         displayRoundMessage(opponentMessage);
         playerLoseRound();
       }
+      useBladeSpin();
       break;
 
     case 'heavy-strike':
@@ -448,21 +454,25 @@ function playRound(playerSelection, computerSelection) {
         playerLoseRound();
         displayRoundMessage(opponentMessage);
       }
+      useHeavyStrike();
       break;
     case 'golden-armor':
       hideGoldenArmor();
       displayRoundMessage(`blessed`);
+      useGoldenArmor();
       break;
       
     case 'shuriken':
       if(computerSelection === 'dagger' || computerSelection === 'heavy-strike' || computerSelection === 'health-potion') {
         computerLoseRound();
         displayRoundMessage(championWinMessage);
+        useShuriken();
       }else if(computerSelection === 'golden-armor') {
         displayRoundMessage(noEffect);
       }else {
         playerLoseRound();
         displayRoundMessage(opponentMessage);
+        useShurikenBlocked();
       }
       break;
   case 'health-potion':
@@ -473,6 +483,7 @@ function playRound(playerSelection, computerSelection) {
         playerLoseRound();
         displayRoundMessage(opponentMessage);
       }
+      useHealthPotion();
       break;
     case 'rapid-severance':
       ultimateSkill();
@@ -545,6 +556,11 @@ function hideGoldenArmor() {
 function brokenShield() {
   hideShieldSkill.classList.add('disable-skill');
   playerShieldSkill.setAttribute('style', 'pointer-events: none');
+  const shieldBreaks = new Audio('assets/sounds/shield-breaks.mp3');
+  if(!shieldBreaks) return;
+  shieldBreaks.currentTime = 0.2;
+  shieldBreaks.volume = 0.7;
+  shieldBreaks.play();
 }
 
 function ultimateSkill() {
@@ -605,17 +621,84 @@ resetGame.addEventListener('click', () => {
 /* ============================================ */
 // sounds
 
-function playSound(e) {
- const audio = document.querySelector(`audio[name="${e.id}"]`);
-  if(!audio) return; // stop the function from running
-  audio.currentTime = 0;
-  audio.volume = 0.1;// rewind to the start
-  audio.play();
+function playerIsWounded() {
+  const isWounded = new Audio('assets/sounds/get-hit.mp3');
+  if(!isWounded) return; // stop the function from running
+  isWounded.currentTime = 0; // rewind to the start
+  isWounded.volume = 0.3;
+  isWounded.play();
+}
+
+
+function useShuriken() {
+  const shuriken = new Audio('assets/sounds/shuriken-hit.mp3');
+  if(!shuriken) return;
+  shuriken.currentTime = 0;
+  shuriken.volume = 0.7;
+  shuriken.play();
+}
+
+function useShurikenBlocked() {
+  const shurikenBlocked = new Audio('assets/sounds/shuriken-armor.mp3')
+  if(!shurikenBlocked) return;
+  shurikenBlocked.currentTime = 0;
+  shurikenBlocked.volume = 0.7;
+  shurikenBlocked.play();
+}
+
+function useDagger() {
+  const dagger = new Audio('assets/sounds/dagger.wav');
+  if(!dagger) return; // stop the function from running
+  dagger.currentTime = 0; // rewind to the start
+  dagger.volume = 0.3;
+  dagger.play();
+}
+
+function useShieldBlock() {
+  const shieldBlock = new Audio('assets/sounds/shield-block.mp3');
+  if(!shieldBlock) return;
+  shieldBlock.currentTime = 0.2;
+  shieldBlock.volume = 0.7;
+  shieldBlock.play();
+}
+
+function useBladeSpin() {
+  const bladeSpin = new Audio('assets/sounds/spin.wav');
+  if(!bladeSpin) return;
+  bladeSpin.currentTime = 0;
+  bladeSpin.volume = 0.7;
+  bladeSpin.play();
+}
+
+function useHeavyStrike() {
+  const heavyStrike = new Audio('assets/sounds/heavy-attack.mp3');
+  if(!heavyStrike) return;
+  heavyStrike.currentTime = 0;
+  heavyStrike.volume = 0.7;
+  heavyStrike.play();
+}
+
+function useGoldenArmor() {
+  const goldenArmor = new Audio('assets/sounds/golden-armor.wav');
+  if(!goldenArmor) return;
+  goldenArmor.currentTime = 0;
+  goldenArmor.volume = 0.7;
+  goldenArmor.play();
+}
+
+function useHealthPotion() {
+  const healthPotion = new Audio('assets/sounds/bottle.wav');
+  if(!healthPotion) return;
+  healthPotion.currentTime = 0;
+  healthPotion.volume = 0.7;
+  healthPotion.play();
 }
 
 
 
-useSkills.forEach(skill => skill.addEventListener('click', () => {
-playSound(skill)
-}));
-
+/* window.onload = function() {
+ const music = document.getElementById("war");
+  music.currentTime = 36;
+  music.volume = 0.5;
+  music.play();
+} */

@@ -8,23 +8,24 @@
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
 <body>
-    
-    <header class="header">
-        <div class="name-container">
-            <label for="username">Knight Name</label>
-            <input id="username" type="text" name="username" autocomplete="off">
-            <button id="btn-create" class="btn">create</button>
-            <button class="btn btn-random">Random Name</button>
-        </div>
-    </header>
 
-    <main>
-        <section >
+    <main class="main">
+            <section class="start-ui">
+                
+            </section>
+            <header class="header">
+                <div class="name-container">
+                    <label for="username">Knight Name</label>
+                    <input id="username" type="text" name="username" autocomplete="off" maxlength="20">
+                    <button id="btn-create" class="btn">create</button>
+                    <button class="btn btn-random">Random Name</button>
+                </div>
+            </header>
             <section class="arena">
                 <div id="game-over-screen"></div>
                 <div class="card-container">
                     <div class="custom-select">
-                        <select  id="champion-avatar" name="hero-avatar" class="hero-avatar">
+                        <select  id="champion-avatar">
                             <option selected disabled>Select Champion</option>
                             <option class="option-style" value="grand officer">Grand Officer</option>
                             <option class="option-style" value="holy knight 1">Holy Knight</option>
@@ -151,7 +152,7 @@
                 </div>
                 <div class="card-container">
                     <div class="custom-select">
-                        <select id="barbarian-avatar" name="hero-avatar" class="hero-avatar barbarian-avatar">
+                        <select id="barbarian-avatar" class="barbarian-avatar">
                             <option selected disabled>Select Opponent</option>
                             <option class="option-style" value="barbarian">Lirkmirr</option>
                             <option class="option-style" value="barbarian1">Harald Bloodaxe</option>
@@ -194,12 +195,9 @@
                     </div>
                 </div>
             </section>
-        </section>
     </main>
 
-    <audio name="dagger" src="/assets/sounds/sword.wav"></audio>
-    <audio name="shield" src="/assets/sounds/shield-guard-6963.mp3"></audio>
-    <audio id="war" src="/assets/sounds/magic.wav" loop="loop"></audio>
+    <audio id="war" src="/assets/sounds/148_Barovian_Castle.mp3" loop="loop"></audio>
 
 
     <script src="assets/JS/script.js"></script>
