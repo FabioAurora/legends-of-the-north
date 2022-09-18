@@ -692,7 +692,6 @@ function playRound(playerSelection, computerSelection) {
         championAction.textContent = `\u2014 "Used ${playerSelection}"`;
         opponentDialogue.textContent = `You thought you would be throwing this things the whole battle?. not against ${barbarianName.textContent}, no no, and you call yourself a ${knightClass.textContent}?, USE YOUR SWORD!!`;
         championDialogue.textContent = `I was trying to go easy on you, NOW FEEL MY WRATH.`;
-        playerIsWounded();
         playerLoseRound();
         useShurikenBlocked();
       }
@@ -764,54 +763,6 @@ function playRound(playerSelection, computerSelection) {
 
   gameOver();
 }
-
-
-
-/* case "health-potion":
-  healthPotion();
-  if (
-    computerSelection === "shield" ||
-    computerSelection === "golden-armor"
-  ) {
-    roundMessage = `You took one of your potions to restore life`;
-    OpponentAction.textContent = `\u2014 "${computerSelection}"`;
-    championAction.textContent = `\u2014 "Used ${playerSelection}"`;
-    opponentDialogue.textContent = `You also bought this Shaman's elixirs to give you health?`;
-    championDialogue.textContent = `Shaman's what?, no this is holy water blessed by our priests.`;
-    healthPotion();
-    useHealthPotion();
-
-  } else if (playerSelection === computerSelection) {
-    roundMessage = `Both of you are drinking a potion looking on each other eyes.`;
-    OpponentAction.textContent = `\u2014 "${computerSelection}"`;
-    championAction.textContent = `\u2014 "Used ${playerSelection}"`;
-    opponentDialogue.textContent = `"Thinking", Hope you drowns on that Elixir`;
-    championDialogue.textContent = `"Thinking" wondering if he's potion tastes better...`;
-    healthPotion();
-    useHealthPotion();
-  } else {
-    roundMessage = `You were damaged by ${barbarianName.textContent}, while drinking your potion.`;
-    OpponentAction.textContent = `\u2014 "${computerSelection}"`;
-    championAction.textContent = `\u2014 "Used ${playerSelection}"`;
-    opponentDialogue.textContent = `"Jumped at you with a fierce attack", AHHHHH, you are lucky I was aiming at the head.`;
-    championDialogue.textContent = `"thinking", I barely escaped from that attack, need to focus more on my surroundings.`;
-    playerLoseRound();
-    healthPotion();
-    useHealthPotion;
-  }
-  break;
-case "rapid-severance":
-  ultimateSkill();
-  useRapid()
-  if (computerSelection === "golden-armor") {
-  } else {
-    computerLoseRound();
-
-  }
-  break; */
-
-
-
 
 
 
