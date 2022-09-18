@@ -922,7 +922,7 @@ function gameOver() {
     gameOverScreen.setAttribute("style", "display: flex");
     gameIsOver.setAttribute("style", "display: flex");
 
-    gameOverText.textContent = `The winner is ${barbarianName.textContent}`;
+    gameOverText.textContent = `${barbarianName.textContent} is the new Legend of the North`;
   } else if (!computerHealthBar.firstElementChild) {
     showIcons.forEach((icon) => {
       icon.classList.add("selection-icon-display");
@@ -932,6 +932,8 @@ function gameOver() {
     barbarianIMG.setAttribute("src", "assets/images/game-over.png");
     gameOverScreen.setAttribute("style", "display: flex");
     gameIsOver.setAttribute("style", "display: flex");
+
+    gameOverText.textContent = `${championName.textContent} is the new Legend of the North`;
   }
 }
 
