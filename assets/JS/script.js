@@ -697,10 +697,7 @@ function playRound(playerSelection, computerSelection) {
       }
       break;
     case "health-potion":
-      if (
-        computerSelection === "shield" ||
-        computerSelection === "golden-armor"
-      ) {
+
         roundMessage.textContent = `You took one of your potions to restore life`;
         OpponentAction.textContent = `\u2014 "${computerSelection}"`;
         championAction.textContent = `\u2014 "Used ${playerSelection}"`;
@@ -708,36 +705,9 @@ function playRound(playerSelection, computerSelection) {
         championDialogue.textContent = `Shaman's what?, no this is holy water blessed by our priests.`;
         healthPotion();
         useHealthPotion();
-    
-      } else if (playerSelection === computerSelection) {
-        roundMessage.textContent = `Both of you are drinking a potion looking on each other eyes.`;
-        OpponentAction.textContent = `\u2014 "${computerSelection}"`;
-        championAction.textContent = `\u2014 "Used ${playerSelection}"`;
-        opponentDialogue.textContent = `"Thinking", Hope you drowns on that Elixir`;
-        championDialogue.textContent = `"Thinking" wondering if he's potion tastes better...`;
-        healthPotion();
-        useHealthPotion();
-      }else if(computerSelection === 'shuriken') {
-        roundMessage.textContent = `You were damaged by ${barbarianName.textContent}, while drinking your potion.`;
-        OpponentAction.textContent = `\u2014 "${computerSelection}"`;
-        championAction.textContent = `\u2014 "Used ${playerSelection}"`;
-        opponentDialogue.textContent = `"Throws a shuriken at you", try to dodge this, HA HA HA!!`;
-        championDialogue.textContent = `"spited a bit of potion", it got stuck on my leg errrrr, You will pay for this`;
-        playerLoseRound();
-        healthPotion();
-        useHealthPotion();
-      }else {
-        roundMessage.textContent = `You were damaged by ${barbarianName.textContent}, while drinking your potion.`;
-        OpponentAction.textContent = `\u2014 "${computerSelection}"`;
-        championAction.textContent = `\u2014 "Used ${playerSelection}"`;
-        opponentDialogue.textContent = `"Jumped at you with a fierce attack", AHHHHH, you are lucky...< I was aimed at the head.`;
-        championDialogue.textContent = `"thinking", I barely escaped from that attack, need to focus more on my surroundings.`;
-        playerLoseRound();
-        healthPotion();
-        useHealthPotion();
-      }
+
       break;
-      
+
     case "rapid-severance":
       ultimateSkill();
       useRapid();
