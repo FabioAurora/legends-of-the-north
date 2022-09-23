@@ -19,7 +19,7 @@ body {
     align-items: center;
     background-image: url('../images/castle-dragon.jpg');
     background-repeat: no-repeat;
-    overflow: hidden;
+    position: relative;
 }
 
 img {
@@ -457,10 +457,8 @@ select {
     margin-bottom: .5rem;
 }
 
+/* Media Queries */
 @media (max-width: 64rem) {
-    body {
-        color: #00FFFF;
-    }
     select {
         width: 180px;
         font-size: .9rem;
@@ -551,5 +549,264 @@ select {
         
     }
 
+
+}
+
+/* mobile */
+@media (max-width: 43rem) {
+    body {
+        min-height: 100vh;
+    }
+    select {
+        width: 150px;
+        font-size: .7rem;
+    }
+    
+    .start-ui {
+        justify-content: flex-start;
+    }
+ 
+    .start-h1 {
+        font-size: 1.5rem;
+        padding: 3rem 2rem;
+        margin-bottom: 0;
+    }
+    
+    .start-info {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        margin: 0;
+    }
+    .start-info span {
+        font-size: 2rem;
+    }
+    
+    #play-game {
+        align-self: center;
+        padding: 1rem;
+        font-size: 1.2rem;
+        width: 260px;
+    }
+    
+    .ctn {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .custom-select:before {
+        top: 17px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #000;
+    }
+    
+    .header {
+        height: 1.5rem;
+    }
+
+    .name-container {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: 0;
+        padding-left: .5rem;
+        width: 400px;
+        font-size: .8rem;
+        height: 2.5rem;
+        margin-top: .5rem;
+    }
+    
+    #username {
+        height: 1.3rem;
+        font-size: .8rem;
+        width: 110px;
+    }
+    
+    .btn {
+        padding: .4rem .5rem;
+        font-size: .7rem;
+    }
+    .btn-randomize {
+        margin-left: 1rem;
+    }
+    
+    
+    .arena {
+        padding: 2rem 1rem;
+        position: relative;
+    }
+
+    
+    .character-card {
+        width: 200px;
+        height: 370px;
+    }
+
+    
+    .invader-background,
+    .ruler-background {
+        height: 320px;
+    }
+    
+    .character-name {
+        height: 1.4rem;
+    }
+    .character-name h2 {
+        font-size: .6rem;
+        margin-left: 3px;
+    }
+
+    .round-display {
+        padding: .8rem;
+        height: 3rem;
+        font-size: .8rem;
+        width: 90%;
+    }
+    
+    .character {
+        width: 89%;
+        height: 130px;
+    }
+
+    
+    .life-bar {
+        width: 70px;
+        gap: .1rem;
+        margin-right: 2px;
+    }
+    
+    .hearts {
+        width: 8px;
+        margin-bottom: 4px;
+    }
+    
+    .character-description {
+        height: 120px;
+        position: absolute;
+        bottom: -18px;
+        font-size: .6rem;
+        line-height: 1.3;
+    }
+
+    
+    .battle-selection {
+        gap: 2rem;
+        min-width: 200px;
+    }
+    
+    .selection-icon {
+        display: flex;
+        color: #fff;
+       justify-content: center;
+        gap: 1rem;
+        font-size: 1.025em;
+        font-weight: bold;
+        width: 180px;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+    }
+    .selection-icon img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    
+    
+    .selection-icon-display {
+        display: none;
+    }
+    
+    .battle-ctn {
+        min-width: 280px;
+    }
+    
+    .battle-ctn img {
+        width: 50px;
+    }
+    
+    .battle-title {
+        font-size: 1.1rem;
+        margin-top: .5rem;
+    }
+    
+    .skill-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+    
+    .skill-container p {
+        width: 150px;
+        margin-top: .5rem;
+    }
+    
+    
+    
+    .disable-skill {
+        width: 80px;
+        height: 80px;
+        background: rgba(0, 0, 0, .6);
+        position: absolute;
+        border-radius: 10px;
+    }
+    
+    #game-over-screen {
+        display: none;
+        background: rgba(0, 0, 0, .8);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 20;
+    }
+    
+    #game-over {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 400px;
+        gap: 4rem;
+        z-index: 20;
+    }
+    
+    .game-over-title {
+        font-family: var(--game-font);
+        font-weight: 400;
+        color: #FFFFFF;
+        text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 55px #00FFFF, 0 0 75px #00FFFF;
+        color: #FFFFFF;
+        font-size: 4rem;
+    }
+    
+    .game-over-text {
+        color: #fff;
+        font-size: 1.5rem;
+    }
+    
+    .play-again {
+        width: 150px;
+        height: 60px;
+        cursor: pointer;
+    }
+    
+    .how-to-play {
+        gap: .5rem;
+        padding: 0;
+        margin-bottom: 2rem;
+        font-size: .8rem;
+    }
+    .how-to-play h1 {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    .how-to-play ol li {
+        margin-left: 1rem;
+    }
 
 }
