@@ -32,7 +32,7 @@ const ambience = new Audio("assets/sounds/ambience.mp3");
 
 /* *********************************************************************************** */
 // listener for the create name button
-createName.addEventListener("click", () => {
+createName.addEventListener("pointerdown", () => {
   championName.textContent = userName.value;
 });
 
@@ -84,7 +84,7 @@ function randomName() {
   return (championName.textContent = selectIndex);
 }
 
-btnRandom.addEventListener("click", randomName);
+btnRandom.addEventListener("pointerdown", randomName);
 
 /* ************************************************************************************ */
 const selection = document.querySelectorAll("select");
@@ -120,7 +120,7 @@ function startBattle() {
   battleSound();
 }
 
-battleBTN.addEventListener("click", startBattle);
+battleBTN.addEventListener("pointerdown", startBattle);
 
 /* ************************************************************************************ */
 
@@ -737,7 +737,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 useSkills.forEach((icon) =>
-  icon.addEventListener("click", () => {
+  icon.addEventListener("pointerdown", () => {
     playRound(icon.id, computerPlay());
   })
 );
@@ -858,7 +858,7 @@ function gameOver() {
   }
 }
 
-resetGame.addEventListener("click", () => {
+resetGame.addEventListener("pointerdown", () => {
   window.location.reload();
 });
 
@@ -953,7 +953,7 @@ function battleSound() {
 
 /* ============================== */
 
-playGame.addEventListener("click", () => {
+playGame.addEventListener("pointerdown", () => {
   startUI.classList.toggle("hide-UI");
   main.classList.add("show-main");
 
@@ -961,10 +961,3 @@ playGame.addEventListener("click", () => {
   ambience.volume = 0.3;
   ambience.play();
 });
-
-/* window.onload = function() {
- const music = document.getElementById("war");
-  music.currentTime = 36;
-  music.volume = 0.5;
-  music.play();
-} */
