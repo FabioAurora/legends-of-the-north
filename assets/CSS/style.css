@@ -553,7 +553,7 @@ select {
 /* mobile */
 @media  (orientation:portrait), (max-width: 53rem) {
     body {
-        -ms-transform: rotate(-90deg); /* IE 9 */
+    -ms-transform: rotate(-90deg); /* IE 9 */
     -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
     transform: rotate(-90deg);
     width: 100vw ;
@@ -783,3 +783,13 @@ select {
 }
 
 
+@media  (orientation:landscape), (max-width: 53rem) {
+    body {
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    width: 100vw ;
+    height: 100vh ;
+    overflow: scroll;
+    }
+}
