@@ -1,4 +1,4 @@
-# rock-paper-scissors
+# Legends of the North
 
 In our UI, the player should be able to play the game by clicking on buttons rather than typing their answer in a prompt.
 
